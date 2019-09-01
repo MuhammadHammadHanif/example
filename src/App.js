@@ -1,26 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
+import Posts from './components/Post';
+import PostForm from './components/PostForm';
+import MyForm from './components/MyForm';
+import DemoForm from './components/DemoForm';
+import { SubmissionError } from 'redux-form';
 import './App.css';
 
-function App() {
+// const submitToServer = async data => {
+//   try {
+//     let response = await fetch('', {
+//       method: 'POST',
+//       body: JSON.stringify(data),
+//       headers: {
+//         'Content-Type': 'application/json'
+//       }
+//     });
+//     let resposnsedata = await response.json();
+//     return resposnsedata;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// const submit = ({ firstName = '', lastName = '', email = '' }) => {
+//   let errors = {};
+//   let isError = false;
+//   if (firstName.trim() === '') {
+//     errors.firstName = 'First Name is required';
+//     isError = true;
+//   }
+//   if (lastName.trim() === '') {
+//     errors.lastName = 'Last Name is required';
+//     isError = true;
+//   }
+//   if (email.trim() === '') {
+//     errors.email = 'Email is required';
+//     isError = true;
+//   }
+//   if (isError) {
+//     throw new SubmissionError(errors);
+//   } else {
+//     // print the form values to the console
+//     return submitToServer({ firstName, lastName, email }).then(data => {
+//       if (data.errors) {
+//         throw new SubmissionError(data.errors);
+//       } else {
+//         console.log(data);
+//       }
+//     });
+//   }
+// };
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      {/* <PostForm />
+      <hr />
+      <Posts /> */}
+      {/* <MyForm onSubmit={submit} /> */}
+      <DemoForm />
     </div>
   );
-}
+};
 
 export default App;
